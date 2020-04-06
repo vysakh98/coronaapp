@@ -1,0 +1,148 @@
+body {
+}
+#container-fluid1{
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin-top: 30px;
+}
+#j1{
+	width: 400px;
+	background-color:green;
+	text-align: center;
+}
+#j2{
+	width: 400px;
+	background-color:yellow;
+	text-align: center;
+}
+#j3{
+	width: 400px;
+	background-color: red;
+	text-align: center;
+}
+
+.last-updated{
+	text-align: center;
+	margin-top: 30px;
+}
+.country-select{
+	text-align: left;
+	position: relative;
+	bottom:39px;
+
+}
+
+
+#container-fluid2{
+	position: absolute;
+	text-align: center;
+}
+
+#table1{
+	position: absolute;
+	width: 600px;
+	border: 1px solid black;
+	left: 340px;
+
+}
+
+.last{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.top-div{
+	width:100%;
+	height:100px;
+}
+.top-div #h1{
+	position: absolute;
+	font-family: 'Baloo Thambi 2', cursive;
+	font-size: 3em;
+	text-align: center;
+	color:blue;
+}
+.top-div #h2{
+	position: absolute;
+	font-family: 'Baloo Thambi 2', cursive;
+	font-size: 3em;
+	text-align: center;
+	color:blue;
+	top:35px;
+}
+
+.topimage{
+	position: absolute;
+	height: 50px;
+	width:50px;
+	right: 0px;
+}
+.report-name{
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+.report-name{
+	font-family: 'Baloo Thambi 2', cursive;
+	font-size: 2em;
+
+}
+img{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 0px;
+	animation: mymove 4s infinite;
+	animation-fill-mode:forwards;
+	animation-timing-function: linear;
+
+}
+@keyframes mymove{
+	0%{
+		transform: rotateY(0deg);
+	}
+	25%{
+		transform: rotateY(90deg);
+	}
+	50%{
+		transform: rotateY(180deg);
+	}
+	75%{
+		transform: rotateY(270deg);
+	}
+	100%{
+		transform: rotateY(360deg);
+	}
+}
+@media only screen and (max-width: 500px) {
+#table1{
+	position: absolute;
+	width: 400px;
+	border: 1px solid black;
+	left:10px;
+}
+
+}
+
+.graph-button{
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+#Graph-div{
+	width: 600px;
+	height:400px;
+	position: absolute;
+	left: 340px;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+#Graph-div{
+	position: absolute;
+	width: 400px;
+	height:400px;
+	left: 10px;
+}
+}

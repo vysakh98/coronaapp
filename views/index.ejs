@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Corona</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'></link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+  </head>
+  <body>
+  	<div class="top-div">
+  		<h1 id="h1">Corona Virus</h1>
+  		<h4 id="h2">Pandemic</h4>
+  		<img src="./images/corona.svg"></img>
+  	</div>
+  	<div class="report-name">
+  		<h1 id="report"><%=report %> report</h1>
+  	</div>
+  	<div class="last-updated">
+	  	<p class="last">Last updated <%= time %></p>
+	  	<form  id="form1" action="/" method="post">
+		  	<select id="select1" name="country" onchange="myFunction1()">
+		  		<option>Select a country</option>
+		  		<% countrys.forEach(function(country){ %>
+		  		<option value="<%= country %>"><%=country%></option>
+		  		<%});%>
+		  	</select>
+		  </form>
+		  	<button class="btn btn-primary graph-button" onclick="myFunction()">Show Graph</button>
+	  </div>
+  	</div>
+    <div class="container-fluid" id="container-fluid1">
+    	<div class="jumbotron" id="j1">
+    		<h1>Recoverd</h1>
+    		<h1><%= recoverd %></h1>
+    		<svg class="bi bi-check" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			  <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+			</svg>
+    	</div>
+    	<div class="jumbotron" id="j2">
+    		<h1>Infected</h1>
+    		<h1><%= infected %></h1>
+    		<svg class="bi bi-exclamation-triangle-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ 			 <path fill-rule="evenodd" d="M8.982 1.566a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 5zm.002 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"/>
+			</svg>
+    	</div>
+    	<div class="jumbotron" id="j3">
+    		<h1>Dead</h1>
+    		<h1><%= dead %></h1>
+    		<svg class="bi bi-heart-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
+			</svg>
+    	</div>
+    </div>
+
+<div class="container-fluid" id="container-fluid2">
+	<%if(table){%>
+	<table class="table" id="table1">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">Date</th>
+	      <th scope="col">Infected</th>
+	      <th scope="col">Deaths</th>
+	      <th scope="col">Recoverd</th>
+	    </tr>
+	  </thead>
+	   <tbody>
+	  		<% data.forEach(function(dat){%>
+		    <tr>
+		      <td><%= dat.date %></td>
+		      <td><%= dat.confirmed %></td>
+		      <td><%= dat.deaths %></td>
+		      <td><%= dat.recovered %></td>
+	    	</tr>
+	    	<%});%>
+		</tbody>
+	</table>
+	 <%}%>
+	 <div id="Graph-div">
+		 <canvas id="myChart" width="400px" height="400px">
+			
+		</canvas>
+	</div>
+</div>
+    <script type="text/javascript" src="../javascripts/c.js"></script>
+  </body>
+</html>
